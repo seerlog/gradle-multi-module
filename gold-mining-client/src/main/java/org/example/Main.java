@@ -1,11 +1,11 @@
 package org.example;
 
-import org.example.service.GoldMiningService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
-        Thread.sleep(7000);
-        GoldMiningService goldMiningService = new GoldMiningService();
-        goldMiningService.goldMining();
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
     }
 }

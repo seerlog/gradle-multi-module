@@ -1,0 +1,6 @@
+spring:
+  main:
+    web-application-type: none
+
+company:
+  url: http://host.docker.internal:8080
