@@ -36,14 +36,7 @@ public class NuggetVentures extends GoldMiningCompany {
                                 break;
                             }
 
-                            GoldMiningActVo goldMiningActVo = GoldMiningActVo.builder()
-                                    .name(this.name)
-                                    .country(this.country)
-                                    .goldMiningKilograms(1)
-                                    .goldReservesKilograms(this.goldReservesKilograms)
-                                    .build();
-
-                            this.goldReservesKilograms = Miner.act(goldMiningActVo, webClient);
+                            this.goldReservesKilograms = Miner.act(GoldMiningActVo.of(this), webClient);
                         }
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);

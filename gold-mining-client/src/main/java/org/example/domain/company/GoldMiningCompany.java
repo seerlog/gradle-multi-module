@@ -1,7 +1,10 @@
 package org.example.domain.company;
 
+import lombok.Getter;
+
 import java.util.concurrent.ExecutorService;
 
+@Getter
 public abstract class GoldMiningCompany {
     protected String name;
     protected String country;
