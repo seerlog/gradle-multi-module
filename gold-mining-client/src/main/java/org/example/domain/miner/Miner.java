@@ -1,34 +1,28 @@
 package org.example.domain.miner;
 
-import org.example.request.GoldMiningRequest;
+import org.example.request.GoldMiningActVo;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
-public class Miner extends Thread {
-    private WebClient webClient;
+public class Miner {
 
-    public Miner(WebClient webClient) {
-        this.webClient = webClient;
-    }
+    public static int act(GoldMiningActVo goldMiningActVo,
+                          WebClient webClient) {
+        int afterGoldReservesKilograms = goldMiningActVo.getGoldReservesKilograms() - goldMiningActVo.getGoldMiningKilograms();
 
-    @Override
-    public void run() {
-        try {
-            GoldMiningRequest goldStatusRequest = GoldMiningRequest.builder()
-                    .name("name")
-                    .country("country")
-                    .goldMiningKilograms(1)
-                    .build();
+        webClient.post()
+                .uri("/gold-status")
+                .body(Mono.just(goldMiningActVo), GoldMiningActVo.class)
+                .retrieve()
+                .bodyToMono(Void.class)
+                .block();
 
-            webClient.post()
-                    .uri("/gold-status")
-                    .body(Mono.just(goldStatusRequest), GoldMiningRequest.class)
-                    .retrieve()
-                    .bodyToMono(Void.class)
-                    .block();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println(String.format("[%s] 광부가 금을 채굴함 %d → %d",
+                goldMiningActVo.getName(),
+                goldMiningActVo.getGoldReservesKilograms(),
+                afterGoldReservesKilograms));
+
+        return afterGoldReservesKilograms;
     }
 
 }
