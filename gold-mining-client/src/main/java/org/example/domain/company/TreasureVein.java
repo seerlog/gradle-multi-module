@@ -16,8 +16,8 @@ public class TreasureVein extends GoldMiningCompany {
         this.name = "treasureVein";
         this.country = "peru";
         this.foundingDate = "1991-07-23";
-        this.goldMinerCount = 12;
-        this.goldReservesKilograms = 230;
+        this.goldMinerCount = 120;
+        this.goldReservesKilograms = 2300;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }

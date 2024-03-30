@@ -16,8 +16,8 @@ public class MineralMint extends GoldMiningCompany {
         this.name = "mineralMint";
         this.country = "australia";
         this.foundingDate = "1975-03-14";
-        this.goldMinerCount = 5;
-        this.goldReservesKilograms = 120;
+        this.goldMinerCount = 50;
+        this.goldReservesKilograms = 1200;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }

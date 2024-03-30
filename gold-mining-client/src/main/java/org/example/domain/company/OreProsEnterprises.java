@@ -16,8 +16,8 @@ public class OreProsEnterprises extends GoldMiningCompany {
         this.name = "oreProsEnterprises";
         this.country = "usa";
         this.foundingDate = "1981-12-11";
-        this.goldMinerCount = 7;
-        this.goldReservesKilograms = 110;
+        this.goldMinerCount = 70;
+        this.goldReservesKilograms = 1100;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }

@@ -16,8 +16,8 @@ public class NuggetVentures extends GoldMiningCompany {
         this.name = "nuggetVentures";
         this.country = "russia";
         this.foundingDate = "1987-06-22";
-        this.goldMinerCount = 4;
-        this.goldReservesKilograms = 160;
+        this.goldMinerCount = 40;
+        this.goldReservesKilograms = 1600;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }
