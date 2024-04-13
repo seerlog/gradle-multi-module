@@ -1,6 +1,11 @@
 global:
   scrape_interval: "2s"
   evaluation_interval: "2s"
+
+rule_files:
+  # - "first.rules"
+  # - "second.rules"
+
 scrape_configs:
   - job_name: "springboot"
     metrics_path: "/actuator/prometheus"
