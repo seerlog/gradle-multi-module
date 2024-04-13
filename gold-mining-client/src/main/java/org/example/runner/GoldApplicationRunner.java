@@ -12,7 +12,7 @@ public class GoldApplicationRunner implements ApplicationRunner {
     private final ScenarioService scenarioService;
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         scenarioService.miningForGold();
     }
 
