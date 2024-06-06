@@ -17,7 +17,7 @@ public class TreasureVein extends GoldMiningCompany {
         this.country = "peru";
         this.foundingDate = "1991-07-23";
         this.goldMinerCount = 120;
-        this.goldReservesKilograms = 2300;
+        this.goldReservesKilograms = 23000;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }
@@ -29,7 +29,7 @@ public class TreasureVein extends GoldMiningCompany {
             executor.execute(() -> {
                 while (true) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
 
                         synchronized (this) {
                             if(this.goldReservesKilograms < 1) {

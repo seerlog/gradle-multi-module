@@ -3,4 +3,5 @@ spring:
     web-application-type: none
 
 company:
-  url: http://host.docker.internal:8080
+#  url: http://host.docker.internal:8080
+  url: http://34.64.76.254:30100

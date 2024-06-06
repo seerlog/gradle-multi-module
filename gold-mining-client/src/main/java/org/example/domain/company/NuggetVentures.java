@@ -17,7 +17,7 @@ public class NuggetVentures extends GoldMiningCompany {
         this.country = "russia";
         this.foundingDate = "1987-06-22";
         this.goldMinerCount = 40;
-        this.goldReservesKilograms = 1600;
+        this.goldReservesKilograms = 16000;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }
@@ -29,7 +29,7 @@ public class NuggetVentures extends GoldMiningCompany {
             executor.execute(() -> {
                 while (true) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
 
                         synchronized (this) {
                             if(this.goldReservesKilograms < 1) {

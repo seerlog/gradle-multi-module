@@ -11,7 +11,7 @@ public class Miner {
         int afterGoldReservesKilograms = goldMiningActVo.getGoldReservesKilograms() - goldMiningActVo.getGoldMiningKilograms();
 
         webClient.post()
-                .uri("/gold-status")
+                .uri("/gold")
                 .body(Mono.just(goldMiningActVo), GoldMiningActVo.class)
                 .retrieve()
                 .bodyToMono(Void.class)

@@ -17,7 +17,7 @@ public class MineralMint extends GoldMiningCompany {
         this.country = "australia";
         this.foundingDate = "1975-03-14";
         this.goldMinerCount = 50;
-        this.goldReservesKilograms = 1200;
+        this.goldReservesKilograms = 12000;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }
@@ -29,7 +29,7 @@ public class MineralMint extends GoldMiningCompany {
             executor.execute(() -> {
                 while (true) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
 
                         synchronized (this) {
                             if(this.goldReservesKilograms < 1) {

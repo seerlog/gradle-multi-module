@@ -17,7 +17,7 @@ public class OreProsEnterprises extends GoldMiningCompany {
         this.country = "usa";
         this.foundingDate = "1981-12-11";
         this.goldMinerCount = 70;
-        this.goldReservesKilograms = 1100;
+        this.goldReservesKilograms = 11000;
         this.goldMiners = Executors.newFixedThreadPool(this.goldMinerCount);
         this.webClient = webClient;
     }
@@ -29,7 +29,7 @@ public class OreProsEnterprises extends GoldMiningCompany {
             executor.execute(() -> {
                 while (true) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
 
                         synchronized (this) {
                             if(this.goldReservesKilograms < 1) {
