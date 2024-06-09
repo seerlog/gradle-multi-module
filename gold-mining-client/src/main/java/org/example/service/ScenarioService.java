@@ -14,7 +14,6 @@ public class ScenarioService {
 
     public void miningForGold() {
         try {
-            Thread.sleep(7000);
             mineralMint.startMining();
             nuggetVentures.startMining();
             oreProsEnterprises.startMining();
